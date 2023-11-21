@@ -9,7 +9,7 @@ function Header() {
                 <h1 className='white'>Meme Generator</h1>
             </div>
             <div className='header-right'>
-                <h2>React Course - Project 3</h2>
+                <h2 className='header-project'>React Course - Project 3</h2>
             </div>
         </header>
     )
