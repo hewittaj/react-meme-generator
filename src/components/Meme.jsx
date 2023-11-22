@@ -2,14 +2,14 @@ import React from 'react'
 import data from '../memesData'
 
 function Meme() {
-    const [memeImage, getMemeImage] = React.useState("")
+    const [memeImage, setMemeImage] = React.useState("")
 
     function getRandomImage() {
         const dataLength = data.data.memes.length
         const memesArray = data.data.memes
         const randomNumber = Math.floor(Math.random() * dataLength)
         const url = memesArray[randomNumber].url
-        getMemeImage(prevUrl => url)
+        setMemeImage(url)
     }
 
     return (
