@@ -80,5 +80,6 @@ body {
   border-radius: 5px;
   margin-bottom: 2rem;
   margin-top: 2rem;
-  width: 50%;
+  height: 50vh;
+  width:auto;
 }
