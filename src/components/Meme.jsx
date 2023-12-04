@@ -31,7 +31,12 @@ function Meme() {
                 Get a new meme image
                 </button>
             </div>
-            <img src={meme.randomImage} className='meme-img'/>
+            <div className='meme'>
+              <img src={meme.randomImage} className='meme-img'/>  
+              <h2 className='meme-text top'>One does not simply</h2>
+              <h2 className='meme-text bottom'>walk into mordor</h2>
+            </div>
+            
         </main>
     )
 }
