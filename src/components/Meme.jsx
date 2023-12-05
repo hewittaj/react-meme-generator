@@ -1,5 +1,4 @@
 import React from 'react'
-import data from '../memesData'
 
 function Meme() {
     // States
@@ -9,7 +8,7 @@ function Meme() {
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    const [allMemes, setAllMemes] = React.useState(data)
+    const [allMemes, setAllMemes] = React.useState([])
 
     // Functions
     function getRandomImage() {
