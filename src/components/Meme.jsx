@@ -2,17 +2,19 @@ import React from 'react'
 import data from '../memesData'
 
 function Meme() {
+    // States
     const [meme, setMeme] = React.useState({
         topText: "One does not simply",
         bottomText: "Walk into Mordor",
         randomImage: "http://i.imgflip.com/1bij.jpg"
     })
 
-    const [allMemeImages, setMemeImages] = React.useState(data)
+    const [allMemes, setAllMemes] = React.useState(data)
 
+    // Functions
     function getRandomImage() {
-        const dataLength = allMemeImages.data.memes.length
-        const memesArray = allMemeImages.data.memes
+        const dataLength = allMemes.length
+        const memesArray = allMemes
         const randomNumber = Math.floor(Math.random() * dataLength)
         const url = memesArray[randomNumber].url
         setMeme(prevMeme => {
@@ -29,6 +31,14 @@ function Meme() {
             })
         )
     }
+
+    React.useEffect(
+        () => {
+           fetch("https://api.imgflip.com/get_memes")
+           .then(res => res.json())
+           .then(data => setAllMemes(data.data.memes))
+        }, []
+    )
 
     return (
         <main className='main-content'>
